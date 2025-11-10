@@ -30,10 +30,12 @@
     const maxY = window.innerHeight - el.offsetHeight - padding;
 
     // Friendly: ±150px dari posisi sekarang
-    const x = Math.min(Math.max(el.offsetLeft + (Math.random()*300 - 150), padding), maxX);
-    const y = Math.min(Math.max(el.offsetTop + (Math.random()*300 - 150), padding), maxY);
+    // Lebih pelan & jarak pendek: ±60px aja
+    const x = Math.min(Math.max(el.offsetLeft + (Math.random()*120 - 60), padding), maxX);
+    const y = Math.min(Math.max(el.offsetTop + (Math.random()*120 - 60), padding), maxY);
 
-    el.style.transition = 'left 0.3s ease, top 0.3s ease, transform 0.12s linear';
+// Gerak lebih smooth (0.6s)
+    el.style.transition = 'left 0.6s ease, top 0.6s ease, transform 0.25s linear';
     el.style.left = x + 'px';
     el.style.top = y + 'px';
 
